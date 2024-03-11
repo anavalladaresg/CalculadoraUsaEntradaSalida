@@ -2,6 +2,7 @@ import libreria.EntradaSalida;
 
 /**
  * Clase principal
+ *
  * @author Ana
  * @version 1.0
  */
@@ -11,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         final float OPERACION = EntradaSalida.entrada("Elija la operación a realizar: \n1. Suma\n2. Resta\n" +
-                "3. Multiplicación\n4. División\n", 1);
+                "3. Multiplicación\n4. División\n5. Raíces\n", 1);
         float a;
         float b;
 
@@ -21,7 +22,7 @@ public class Main {
                 Suma suma = new Suma();
                 a = EntradaSalida.entrada("Primer número a sumar: ", 1);
                 b = EntradaSalida.entrada("Segundo número a sumar: ", 1);
-                EntradaSalida.salida("Resultado: " + suma.sumar(a,b), 1);
+                EntradaSalida.salida("Resultado: " + suma.sumar(a, b), 1);
                 break;
             case 2:
                 Resta resta = new Resta();
@@ -40,6 +41,12 @@ public class Main {
                 a = EntradaSalida.entrada("Primer número a dividir: ", 2);
                 b = EntradaSalida.entrada("Segundo número a dividir: ", 2);
                 EntradaSalida.salida("Resultado: " + division.dividir(a, b), 1);
+                break;
+            case 5:
+                Raices raices = new Raices();
+                a = EntradaSalida.entrada("Primer número a calcular la raíz: ", 2);
+                b = EntradaSalida.entrada("Segundo número a calcular la raíz: ", 2);
+                EntradaSalida.salida("Resultado: " + raices.calcularRaiz(a, (int) b), 1);
                 break;
             default:
                 System.out.println("Opción no válida");
